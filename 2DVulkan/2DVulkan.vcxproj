@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Dist|x64">
+      <Configuration>Dist</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{4CE724E4-38B4-7FEF-61CD-6D974DF9B47D}</ProjectGuid>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>2DVulkan</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\bin\Debug-windows-x86_64\2DVulkan\</OutDir>
+    <IntDir>..\bin-int\Debug-windows-x86_64\2DVulkan\</IntDir>
+    <TargetName>2DVulkan</TargetName>
+    <TargetExt>.exe</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\bin\Release-windows-x86_64\2DVulkan\</OutDir>
+    <IntDir>..\bin-int\Release-windows-x86_64\2DVulkan\</IntDir>
+    <TargetName>2DVulkan</TargetName>
+    <TargetExt>.exe</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\bin\Dist-windows-x86_64\2DVulkan\</OutDir>
+    <IntDir>..\bin-int\Dist-windows-x86_64\2DVulkan\</IntDir>
+    <TargetName>2DVulkan</TargetName>
+    <TargetExt>.exe</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>RESOURCES="D:/Projects/2DVulkan/2DVulkan/Clever/Clever/Resources/";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src;vender\GLFW\include;vender\vulkan\Include;vender\glm\include;vender\stb_image\include;vender\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>vender\vulkan\Lib\vulkan-1.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>RESOURCES="D:/Projects/2DVulkan/2DVulkan/Clever/Clever/Resources/";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src;vender\GLFW\include;vender\vulkan\Include;vender\glm\include;vender\stb_image\include;vender\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>vender\vulkan\Lib\vulkan-1.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>RESOURCES="D:/Projects/2DVulkan/2DVulkan/Clever/Clever/Resources/";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>src;vender\GLFW\include;vender\vulkan\Include;vender\glm\include;vender\stb_image\include;vender\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>vender\vulkan\Lib\vulkan-1.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Controller\EventController.h" />
+    <ClInclude Include="src\Controller\EventControllerFlags.h" />
+    <ClInclude Include="src\Controller\MagicController.h" />
+    <ClInclude Include="src\Controller\MagicControllerFlags.h" />
+    <ClInclude Include="src\Controller\ObjectController.h" />
+    <ClInclude Include="src\Controller\ObjectControllerFlags.h" />
+    <ClInclude Include="src\Controller\PhysicsController.h" />
+    <ClInclude Include="src\Controller\PhysicsControllerFlags.h" />
+    <ClInclude Include="src\Controller\RenderController.h" />
+    <ClInclude Include="src\Controller\RenderControllerFlags.h" />
+    <ClInclude Include="src\Controller\UserController.h" />
+    <ClInclude Include="src\Engine.h" />
+    <ClInclude Include="src\EngineData\EngineData.h" />
+    <ClInclude Include="src\EngineData\EngineStartFlags.h" />
+    <ClInclude Include="src\EngineData\EventData\ConversionTable.h" />
+    <ClInclude Include="src\EngineData\EventData\EventData.h" />
+    <ClInclude Include="src\EngineData\EventData\GLFWData.h" />
+    <ClInclude Include="src\EngineData\EventData\Interface_OnClick.h" />
+    <ClInclude Include="src\EngineData\EventData\KeyCodes.h" />
+    <ClInclude Include="src\EngineData\EventData\KeyInputData.h" />
+    <ClInclude Include="src\EngineData\EventData\KeyState.h" />
+    <ClInclude Include="src\EngineData\MagicData\SpellBlock.h" />
+    <ClInclude Include="src\EngineData\MagicData\SpellBlockAdderData.h" />
+    <ClInclude Include="src\EngineData\MagicData\VisualBlocksData.h" />
+    <ClInclude Include="src\EngineData\ObjectData\GameObject.h" />
+    <ClInclude Include="src\EngineData\ObjectData\ModelMatrix.h" />
+    <ClInclude Include="src\EngineData\ObjectData\Vertex.h" />
+    <ClInclude Include="src\EngineData\ObjectData\VulkanData.h" />
+    <ClInclude Include="src\EngineData\ObjectData\WorldObjectsData.h" />
+    <ClInclude Include="src\EngineData\Rectangle.h" />
+    <ClInclude Include="src\EngineData\RenderData\VulkanData\CoreVulkanData.h" />
+    <ClInclude Include="src\EngineData\RenderData\VulkanData\ImGuiData.h" />
+    <ClInclude Include="src\EngineData\RenderData\VulkanData\PhysicalDeviceProperties.h" />
+    <ClInclude Include="src\EngineData\RenderData\VulkanData\PublicVulkanData.h" />
+    <ClInclude Include="src\EngineData\RenderData\VulkanData\UniformConstantsData.h" />
+    <ClInclude Include="src\EngineData\RenderData\WindowStateData.h" />
+    <ClInclude Include="src\EngineServices\ImGui\ImGuiService.h" />
+    <ClInclude Include="src\EngineServices\MagicInteraction\ImGuiDocks\SpellBlockAdder.h" />
+    <ClInclude Include="src\EngineServices\MagicSpellService.h" />
+    <ClInclude Include="src\EngineServices\WorldInteraction\EventResponseServices.h" />
+    <ClInclude Include="src\EngineServices\GameObjectServices.h" />
+    <ClInclude Include="src\EngineServices\VulkanDestructorService.h" />
+    <ClInclude Include="src\EngineServices\VulkanInitializerService.h" />
+    <ClInclude Include="src\EngineServices\WindowServices.h" />
+    <ClInclude Include="src\EngineServices\WorldInteraction\BlockServices.h" />
+    <ClInclude Include="src\ImGuiDockData\DockData.h" />
+    <ClInclude Include="src\ImGuiDockData\ObjectPlacementDock.h" />
+    <ClInclude Include="src\SpellBlocksDefinitions\Action_CreateElement.h" />
+    <ClInclude Include="src\SpellBlocksDefinitions\BlockDataParent.h" />
+    <ClInclude Include="src\SpellBlocksDefinitions\Event_OnClick.h" />
+    <ClInclude Include="src\SpellBlocksDefinitions\SpellBlockNames.h" />
+    <ClInclude Include="vender\imgui\backends\imgui_impl_glfw.h" />
+    <ClInclude Include="vender\imgui\backends\imgui_impl_vulkan.h" />
+    <ClInclude Include="vender\imgui\imconfig.h" />
+    <ClInclude Include="vender\imgui\imgui.h" />
+    <ClInclude Include="vender\imgui\imgui_internal.h" />
+    <ClInclude Include="vender\imgui\imstb_rectpack.h" />
+    <ClInclude Include="vender\imgui\imstb_textedit.h" />
+    <ClInclude Include="vender\imgui\imstb_truetype.h" />
+    <ClInclude Include="vender\stb_image\include\stb_image.h" />
+    <ClInclude Include="vender\vulkan\vulkan.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Controller\EventController.cpp" />
+    <ClCompile Include="src\Controller\MagicController.cpp" />
+    <ClCompile Include="src\Controller\ObjectController.cpp" />
+    <ClCompile Include="src\Controller\PhysicsController.cpp" />
+    <ClCompile Include="src\Controller\RenderController.cpp" />
+    <ClCompile Include="src\Controller\UserController.cpp" />
+    <ClCompile Include="src\Engine.cpp" />
+    <ClCompile Include="src\EngineData\MagicData\BlockTypes.h" />
+    <ClCompile Include="src\EngineServices\ImGui\ImGuiService.cpp" />
+    <ClCompile Include="src\EngineServices\MagicInteraction\ImGuiDocks\SpellBlockAdder.cpp" />
+    <ClCompile Include="src\EngineServices\MagicSpellService.cpp" />
+    <ClCompile Include="src\EngineServices\WorldInteraction\EventResponseServices.cpp" />
+    <ClCompile Include="src\EngineServices\GameObjectServices.cpp" />
+    <ClCompile Include="src\EngineServices\VulkanDestructorService.cpp" />
+    <ClCompile Include="src\EngineServices\VulkanInitializerService.cpp" />
+    <ClCompile Include="src\EngineServices\WindowServices.cpp" />
+    <ClCompile Include="src\EngineServices\WorldInteraction\BlockServices.cpp" />
+    <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="vender\imgui\backends\imgui_impl_glfw.cpp" />
+    <ClCompile Include="vender\imgui\backends\imgui_impl_vulkan.cpp" />
+    <ClCompile Include="vender\imgui\imgui.cpp" />
+    <ClCompile Include="vender\imgui\imgui_demo.cpp" />
+    <ClCompile Include="vender\imgui\imgui_draw.cpp" />
+    <ClCompile Include="vender\imgui\imgui_tables.cpp" />
+    <ClCompile Include="vender\imgui\imgui_widgets.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

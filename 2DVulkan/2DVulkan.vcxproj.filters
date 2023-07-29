@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Controller">
+      <UniqueIdentifier>{A0401C75-8C0E-107B-75A2-80A1610FECDF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\EngineData">
+      <UniqueIdentifier>{CCCF073A-B89D-FB3F-A131-6C668D9ED7A4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\EngineData\ObjectData">
+      <UniqueIdentifier>{8C0E47C6-F8D0-7A50-4181-09DDAD82532E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\EngineData\RenderData">
+      <UniqueIdentifier>{F54B6F98-610E-A322-AABE-31AF16C07B00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\EngineData\RenderData\VulkanData">
+      <UniqueIdentifier>{0F8C5311-FB72-1509-A4C3-7B2690898E6F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\EngineServices">
+      <UniqueIdentifier>{B639949E-A21D-55F4-0B7E-4F47F7803F76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vender">
+      <UniqueIdentifier>{69728122-5514-ACF8-3ECF-BF4C2A103349}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vender\imgui">
+      <UniqueIdentifier>{93EA3DB6-7F4D-CD5A-28D3-0511141599DD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vender\imgui\backends">
+      <UniqueIdentifier>{1DFA2BF3-8966-E7ED-525A-7F4BBE850956}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vender\stb_image">
+      <UniqueIdentifier>{43FA3870-2FF3-57C2-5825-3D47447D37CE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vender\stb_image\include">
+      <UniqueIdentifier>{B6B4B125-A2D9-00A6-CB24-E635B7A8FFC3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vender\vulkan">
+      <UniqueIdentifier>{E9A3E19C-5564-5DD3-1E9F-A6508A1EA2AF}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Controller\ObjectController.h">
+      <Filter>src\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Controller\ObjectControllerFlags.h">
+      <Filter>src\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Controller\RenderController.h">
+      <Filter>src\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Controller\RenderControllerFlags.h">
+      <Filter>src\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Engine.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineData\EngineData.h">
+      <Filter>src\EngineData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineData\EngineStartFlags.h">
+      <Filter>src\EngineData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineData\ObjectData\GameObject.h">
+      <Filter>src\EngineData\ObjectData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineData\ObjectData\ModelMatrix.h">
+      <Filter>src\EngineData\ObjectData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineData\ObjectData\Vertex.h">
+      <Filter>src\EngineData\ObjectData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineData\ObjectData\VulkanData.h">
+      <Filter>src\EngineData\ObjectData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineData\ObjectData\WorldObjectsData.h">
+      <Filter>src\EngineData\ObjectData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineData\Rectangle.h">
+      <Filter>src\EngineData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineData\RenderData\VulkanData\CoreVulkanData.h">
+      <Filter>src\EngineData\RenderData\VulkanData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineData\RenderData\VulkanData\ImGuiData.h">
+      <Filter>src\EngineData\RenderData\VulkanData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineData\RenderData\VulkanData\PhysicalDeviceProperties.h">
+      <Filter>src\EngineData\RenderData\VulkanData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineData\RenderData\VulkanData\PublicVulkanData.h">
+      <Filter>src\EngineData\RenderData\VulkanData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineData\RenderData\VulkanData\UniformConstantsData.h">
+      <Filter>src\EngineData\RenderData\VulkanData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineServices\GameObjectServices.h">
+      <Filter>src\EngineServices</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineServices\VulkanDestructorService.h">
+      <Filter>src\EngineServices</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineServices\VulkanInitializerService.h">
+      <Filter>src\EngineServices</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineServices\WindowServices.h">
+      <Filter>src\EngineServices</Filter>
+    </ClInclude>
+    <ClInclude Include="vender\imgui\backends\imgui_impl_glfw.h">
+      <Filter>vender\imgui\backends</Filter>
+    </ClInclude>
+    <ClInclude Include="vender\imgui\backends\imgui_impl_vulkan.h">
+      <Filter>vender\imgui\backends</Filter>
+    </ClInclude>
+    <ClInclude Include="vender\imgui\imconfig.h">
+      <Filter>vender\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="vender\imgui\imgui.h">
+      <Filter>vender\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="vender\imgui\imgui_internal.h">
+      <Filter>vender\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="vender\imgui\imstb_rectpack.h">
+      <Filter>vender\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="vender\imgui\imstb_textedit.h">
+      <Filter>vender\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="vender\imgui\imstb_truetype.h">
+      <Filter>vender\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="vender\stb_image\include\stb_image.h">
+      <Filter>vender\stb_image\include</Filter>
+    </ClInclude>
+    <ClInclude Include="vender\vulkan\vulkan.h">
+      <Filter>vender\vulkan</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Controller\EventController.h" />
+    <ClInclude Include="src\Controller\EventControllerFlags.h" />
+    <ClInclude Include="src\EngineData\EventData\ConversionTable.h" />
+    <ClInclude Include="src\EngineData\EventData\EventData.h" />
+    <ClInclude Include="src\EngineData\EventData\GLFWData.h" />
+    <ClInclude Include="src\EngineData\EventData\KeyCodes.h" />
+    <ClInclude Include="src\EngineData\EventData\KeyInputData.h" />
+    <ClInclude Include="src\EngineData\EventData\KeyState.h" />
+    <ClInclude Include="src\ImGuiDockData\DockData.h" />
+    <ClInclude Include="src\Controller\MagicController.h" />
+    <ClInclude Include="src\Controller\MagicControllerFlags.h" />
+    <ClInclude Include="src\Controller\PhysicsController.h" />
+    <ClInclude Include="src\Controller\PhysicsControllerFlags.h" />
+    <ClInclude Include="src\EngineData\RenderData\WindowStateData.h" />
+    <ClInclude Include="src\EngineServices\WorldInteraction\BlockServices.h" />
+    <ClInclude Include="src\EngineServices\WorldInteraction\EventResponseServices.h" />
+    <ClInclude Include="src\ImGuiDockData\ObjectPlacementDock.h" />
+    <ClInclude Include="src\EngineServices\MagicSpellService.h" />
+    <ClInclude Include="src\EngineData\MagicData\SpellBlock.h" />
+    <ClInclude Include="src\EngineServices\ImGui\ImGuiService.h" />
+    <ClInclude Include="src\Controller\UserController.h" />
+    <ClInclude Include="src\EngineServices\MagicInteraction\ImGuiDocks\SpellBlockAdder.h" />
+    <ClInclude Include="src\SpellBlocksDefinitions\Event_OnClick.h" />
+    <ClInclude Include="src\SpellBlocksDefinitions\BlockDataParent.h" />
+    <ClInclude Include="src\EngineData\EventData\Interface_OnClick.h" />
+    <ClInclude Include="src\SpellBlocksDefinitions\Action_CreateElement.h" />
+    <ClInclude Include="src\EngineData\MagicData\SpellBlockAdderData.h" />
+    <ClInclude Include="src\SpellBlocksDefinitions\SpellBlockNames.h" />
+    <ClInclude Include="src\EngineData\MagicData\VisualBlocksData.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Controller\ObjectController.cpp">
+      <Filter>src\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Controller\RenderController.cpp">
+      <Filter>src\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EngineServices\GameObjectServices.cpp">
+      <Filter>src\EngineServices</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EngineServices\VulkanDestructorService.cpp">
+      <Filter>src\EngineServices</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EngineServices\VulkanInitializerService.cpp">
+      <Filter>src\EngineServices</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EngineServices\WindowServices.cpp">
+      <Filter>src\EngineServices</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="vender\imgui\backends\imgui_impl_glfw.cpp">
+      <Filter>vender\imgui\backends</Filter>
+    </ClCompile>
+    <ClCompile Include="vender\imgui\backends\imgui_impl_vulkan.cpp">
+      <Filter>vender\imgui\backends</Filter>
+    </ClCompile>
+    <ClCompile Include="vender\imgui\imgui.cpp">
+      <Filter>vender\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="vender\imgui\imgui_demo.cpp">
+      <Filter>vender\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="vender\imgui\imgui_draw.cpp">
+      <Filter>vender\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="vender\imgui\imgui_tables.cpp">
+      <Filter>vender\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="vender\imgui\imgui_widgets.cpp">
+      <Filter>vender\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Controller\EventController.cpp" />
+    <ClCompile Include="src\Controller\MagicController.cpp" />
+    <ClCompile Include="src\Controller\PhysicsController.cpp" />
+    <ClCompile Include="src\EngineServices\WorldInteraction\BlockServices.cpp" />
+    <ClCompile Include="src\EngineServices\WorldInteraction\EventResponseServices.cpp" />
+    <ClCompile Include="src\EngineServices\MagicSpellService.cpp" />
+    <ClCompile Include="src\EngineData\MagicData\BlockTypes.h" />
+    <ClCompile Include="src\EngineServices\ImGui\ImGuiService.cpp" />
+    <ClCompile Include="src\Controller\UserController.cpp" />
+    <ClCompile Include="src\EngineServices\MagicInteraction\ImGuiDocks\SpellBlockAdder.cpp" />
+  </ItemGroup>
+</Project>
