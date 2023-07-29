@@ -6,4 +6,4 @@
 struct VisualBlocksData
 {
 	std::vector<VisualSpellBlock> visualSpellBlocks{}; 
-};
+};//Text
