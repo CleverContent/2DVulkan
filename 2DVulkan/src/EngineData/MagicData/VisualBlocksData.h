@@ -5,5 +5,5 @@
 
 struct VisualBlocksData
 {
-	std::vector<VisualSpellBlock> visualSpellBlocks{};
+	std::vector<VisualSpellBlock> visualSpellBlocks{}; 
 };
