@@ -8,7 +8,7 @@
 
 int main() {
     EngineStartFlags flags = {};
-    flags.windowSize = { 980, 720 };
+    flags.windowSize = { 980 * 1.5, 720 * 1.5 };
 
     Engine engine{ flags };
     

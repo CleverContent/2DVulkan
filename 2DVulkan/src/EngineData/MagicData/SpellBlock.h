@@ -1,5 +1,4 @@
 #pragma once
-#include "SpellGlobalData.h"
 #include "SpellBlocksDefinitions/BlockDataParent.h"
 #include "BlockTypes.h"
 

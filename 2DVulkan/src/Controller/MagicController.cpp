@@ -40,8 +40,8 @@ void MagicController::SpellCreatorImGui()
 
 	if (ImGui::Button("PlaceBlock"))
 	{
-		if(spellCreatorData.currentSelectedBlock != )
-		spellCreatorData.placeBlock = true;
+		/*if(spellCreatorData.currentSelectedBlock != )
+		spellCreatorData.placeBlock = true;*/
 	}
 
 	ImGui::End();

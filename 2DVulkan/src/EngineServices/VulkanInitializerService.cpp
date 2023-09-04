@@ -50,12 +50,14 @@ namespace Service
 			coreVulkanData = CoreVulkanData::getInstance();
 		if (publicVulkanData == nullptr)
 			publicVulkanData = PublicVulkanData::getInstance();
+
 		CreateUniformBuffers(vulkanData);
 		CreateDescriptorSetLayout(vulkanData);
 		CreatePipelineLayout(vulkanData);
 		CreateGraphicsPipeline(vulkanData);
 		CreateDescriptorPool(vulkanData);
 		CreateDescriptorSets(vulkanData);
+
 	}
 
 	void VulkanInitializerService::StartSetupImGUI()
@@ -693,7 +695,7 @@ namespace Service
 
 	void VulkanInitializerService::CreateDescriptorSetLayout(VulkanData& vulkanData)
 	{
-		std::vector< VkDescriptorSetLayoutBinding> bindingInfos(2);
+		std::vector<VkDescriptorSetLayoutBinding> bindingInfos(2);
 		bindingInfos[0].binding = 0;
 		bindingInfos[0].descriptorType = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
 		bindingInfos[0].descriptorCount = 1;
@@ -703,6 +705,23 @@ namespace Service
 		bindingInfos[1].descriptorType = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
 		bindingInfos[1].descriptorCount = 1;
 		bindingInfos[1].stageFlags = VK_SHADER_STAGE_VERTEX_BIT;
+
+		if (vulkanData.texture->Image != nullptr && vulkanData.glyphTexture->Image != nullptr)
+		{
+			bindingInfos.resize(4);
+
+			bindingInfos[2].binding = 2;
+			bindingInfos[2].descriptorCount = 1;
+			bindingInfos[2].descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+			bindingInfos[2].pImmutableSamplers = nullptr;
+			bindingInfos[2].stageFlags = VK_SHADER_STAGE_FRAGMENT_BIT;
+
+			bindingInfos[3].binding = 3;
+			bindingInfos[3].descriptorCount = 1;
+			bindingInfos[3].descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+			bindingInfos[3].pImmutableSamplers = nullptr;
+			bindingInfos[3].stageFlags = VK_SHADER_STAGE_FRAGMENT_BIT;
+		}
 
 		VkDescriptorSetLayoutCreateInfo desciptorInfo{};
 		desciptorInfo.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_CREATE_INFO;
@@ -718,10 +737,18 @@ namespace Service
 
 	void VulkanInitializerService::CreatePipelineLayout(VulkanData& vulkanData)
 	{
+		VkPushConstantRange pushConstantRange{};
+		pushConstantRange.offset = 0;
+		pushConstantRange.size = sizeof(FontPushConstants);
+		pushConstantRange.stageFlags = VK_SHADER_STAGE_VERTEX_BIT;
+
+
 		VkPipelineLayoutCreateInfo info{};
 		info.sType = VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO;
 		info.setLayoutCount = 1;
 		info.pSetLayouts = &vulkanData.vulkanDescriptorSetLayout;
+		info.pushConstantRangeCount = 1;
+		info.pPushConstantRanges = &pushConstantRange;
 
 		if (vkCreatePipelineLayout(coreVulkanData->device, &info, nullptr, &vulkanData.vulkanPipelineLayout) != VK_SUCCESS)
 		{
@@ -731,8 +758,8 @@ namespace Service
 
 	void VulkanInitializerService::CreateGraphicsPipeline(VulkanData& vulkanData)
 	{
-		auto vertShaderCode = ReadShaderFile("src/Resources/Shaders/vert.spv");
-		auto fragShaderCode = ReadShaderFile("src/Resources/Shaders/frag.spv");
+		auto vertShaderCode = ReadShaderFile("src/Resources/Shaders/TextVert.spv");
+		auto fragShaderCode = ReadShaderFile("src/Resources/Shaders/TextFrag.spv");
 
 		VkShaderModule vertShaderModule = CreateShaderModule(vertShaderCode);
 		VkShaderModule fragShaderModule = CreateShaderModule(fragShaderCode);
@@ -790,7 +817,13 @@ namespace Service
 
 		VkPipelineColorBlendAttachmentState colorBlendAttachment{};
 		colorBlendAttachment.colorWriteMask = VK_COLOR_COMPONENT_R_BIT | VK_COLOR_COMPONENT_G_BIT | VK_COLOR_COMPONENT_B_BIT | VK_COLOR_COMPONENT_A_BIT;
-		colorBlendAttachment.blendEnable = VK_FALSE;
+		colorBlendAttachment.blendEnable = VK_TRUE;
+		colorBlendAttachment.srcColorBlendFactor = VK_BLEND_FACTOR_SRC_ALPHA;
+		colorBlendAttachment.dstColorBlendFactor = VK_BLEND_FACTOR_ONE_MINUS_SRC_ALPHA;
+		colorBlendAttachment.colorBlendOp = VK_BLEND_OP_ADD;
+		colorBlendAttachment.srcAlphaBlendFactor = VK_BLEND_FACTOR_ONE;
+		colorBlendAttachment.dstAlphaBlendFactor = VK_BLEND_FACTOR_ZERO;
+		colorBlendAttachment.alphaBlendOp = VK_BLEND_OP_ADD;
 
 		VkPipelineColorBlendStateCreateInfo colorBlending{};
 		colorBlending.sType = VK_STRUCTURE_TYPE_PIPELINE_COLOR_BLEND_STATE_CREATE_INFO;
@@ -848,14 +881,21 @@ namespace Service
 
 	void VulkanInitializerService::CreateDescriptorPool(VulkanData& vulkanData)
 	{
-		VkDescriptorPoolSize sizeInfo{};
-		sizeInfo.descriptorCount = static_cast<uint32_t>(coreVulkanData->MaxFramesInFlight);
-		sizeInfo.type = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
+		std::vector<VkDescriptorPoolSize> sizeInfo(1);
+		sizeInfo[0].type = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
+		sizeInfo[0].descriptorCount = static_cast<uint32_t>(coreVulkanData->MaxFramesInFlight);
+
+		if (vulkanData.texture->Image != nullptr)
+		{
+			sizeInfo.resize(2);
+			sizeInfo[1].type = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+			sizeInfo[1].descriptorCount = static_cast<uint32_t>(coreVulkanData->MaxFramesInFlight);
+		}
 
 		VkDescriptorPoolCreateInfo info{};
 		info.sType = VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_CREATE_INFO;
-		info.poolSizeCount = 1;
-		info.pPoolSizes = &sizeInfo;
+		info.poolSizeCount = static_cast<uint32_t>(sizeInfo.size());
+		info.pPoolSizes = sizeInfo.data();
 		info.maxSets = static_cast<uint32_t>(coreVulkanData->MaxFramesInFlight);
 
 		if (vkCreateDescriptorPool(coreVulkanData->device, &info, nullptr, &vulkanData.vulkanDescriptorPool) != VK_SUCCESS)
@@ -883,26 +923,59 @@ namespace Service
 		for (size_t i = 0; i < coreVulkanData->MaxFramesInFlight; i++) {
 
 			std::array<VkDescriptorBufferInfo, 2> bufferInfos;
-
 			bufferInfos[0].buffer = vulkanData.vulkanUniformBuffers[i];
 			bufferInfos[0].offset = 0;
 			bufferInfos[0].range = sizeof(ModelMatrix);
-
 
 			bufferInfos[1].buffer = coreVulkanData->orthogonalMatrixBuffer;
 			bufferInfos[1].offset = 0;
 			bufferInfos[1].range = sizeof(UniformConstantsData);
 
-			VkWriteDescriptorSet writeInfo{};
-			writeInfo.sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
-			writeInfo.dstSet = vulkanData.vulkanDescriptorSets[i];
-			writeInfo.dstBinding = 0;
-			writeInfo.dstArrayElement = 0;
-			writeInfo.descriptorType = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
-			writeInfo.descriptorCount = static_cast<uint32_t>(bufferInfos.size());;
-			writeInfo.pBufferInfo = bufferInfos.data();
+			std::vector<VkDescriptorImageInfo> imageInfo{};
 
-			vkUpdateDescriptorSets(coreVulkanData->device, 1, &writeInfo, 0, nullptr);
+			if (vulkanData.texture->Image != nullptr && vulkanData.glyphTexture->Image != nullptr)
+			{
+				imageInfo.resize(2);
+
+				imageInfo[0].imageLayout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL;
+				imageInfo[0].imageView = vulkanData.texture->textureImageView;
+				imageInfo[0].sampler = vulkanData.texture->textureSampler;
+
+				imageInfo[1].imageLayout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL;
+				imageInfo[1].imageView = vulkanData.glyphTexture->textureImageView;
+				imageInfo[1].sampler = vulkanData.glyphTexture->textureSampler;
+			}
+			
+			std::vector<VkWriteDescriptorSet> writeInfo(1);
+			writeInfo[0].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
+			writeInfo[0].dstSet = vulkanData.vulkanDescriptorSets[i];
+			writeInfo[0].dstBinding = 0;
+			writeInfo[0].dstArrayElement = 0;
+			writeInfo[0].descriptorType = VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER;
+			writeInfo[0].descriptorCount = static_cast<uint32_t>(bufferInfos.size());
+			writeInfo[0].pBufferInfo = bufferInfos.data();
+
+			if (vulkanData.texture->Image != nullptr)
+			{
+				writeInfo.resize(3);
+
+				writeInfo[1].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
+				writeInfo[1].dstSet = vulkanData.vulkanDescriptorSets[i];
+				writeInfo[1].dstBinding = 2;
+				writeInfo[1].dstArrayElement = 0;
+				writeInfo[1].descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+				writeInfo[1].descriptorCount = 1;
+				writeInfo[1].pImageInfo = &imageInfo.at(0);
+
+				writeInfo[2].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
+				writeInfo[2].dstSet = vulkanData.vulkanDescriptorSets[i];
+				writeInfo[2].dstBinding = 3;
+				writeInfo[2].dstArrayElement = 0;
+				writeInfo[2].descriptorType = VK_DESCRIPTOR_TYPE_COMBINED_IMAGE_SAMPLER;
+				writeInfo[2].descriptorCount = 1;
+				writeInfo[2].pImageInfo = &imageInfo.at(1);
+			}
+			vkUpdateDescriptorSets(coreVulkanData->device, static_cast<uint32_t>(writeInfo.size()), writeInfo.data(), 0, nullptr);
 		}
 	}
 

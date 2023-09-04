@@ -10,6 +10,12 @@
     <Filter Include="src\EngineData">
       <UniqueIdentifier>{CCCF073A-B89D-FB3F-A131-6C668D9ED7A4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\EngineData\EventData">
+      <UniqueIdentifier>{57B6B55C-43DB-04DD-6C26-EA6C58AA03FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\EngineData\MagicData">
+      <UniqueIdentifier>{B6D5492C-A2FA-98AC-CB45-7E3CB7C997CA}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\EngineData\ObjectData">
       <UniqueIdentifier>{8C0E47C6-F8D0-7A50-4181-09DDAD82532E}</UniqueIdentifier>
     </Filter>
@@ -22,8 +28,32 @@
     <Filter Include="src\EngineServices">
       <UniqueIdentifier>{B639949E-A21D-55F4-0B7E-4F47F7803F76}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\EngineServices\ImGui">
+      <UniqueIdentifier>{609F0A22-4CC4-59A2-750F-3F32619358C0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\EngineServices\MagicInteraction">
+      <UniqueIdentifier>{C6DAB010-3294-1BBB-BBF3-359527ACD12A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\EngineServices\MagicInteraction\ImGuiDocks">
+      <UniqueIdentifier>{24260E47-10A4-5EE0-F99B-1C78E5B8A008}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\EngineServices\WorldInteraction">
+      <UniqueIdentifier>{ED497F23-5903-EACD-E262-04A84E1BA03D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\ImGuiDockData">
+      <UniqueIdentifier>{7202210B-DE18-1FA1-2790-AAC293E5EF28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\SpellBlocksDefinitions">
+      <UniqueIdentifier>{D618016B-C228-AD3B-2BE2-115A17119CD4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Text">
+      <UniqueIdentifier>{61FC25CF-4DC9-80DA-76E2-6E82620EB668}</UniqueIdentifier>
+    </Filter>
     <Filter Include="vender">
       <UniqueIdentifier>{69728122-5514-ACF8-3ECF-BF4C2A103349}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vender\freetype">
+      <UniqueIdentifier>{3C3718A0-A8C2-8564-B1D3-08591DDEE164}</UniqueIdentifier>
     </Filter>
     <Filter Include="vender\imgui">
       <UniqueIdentifier>{93EA3DB6-7F4D-CD5A-28D3-0511141599DD}</UniqueIdentifier>
@@ -42,16 +72,37 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Controller\EventController.h">
+      <Filter>src\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Controller\EventControllerFlags.h">
+      <Filter>src\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Controller\MagicController.h">
+      <Filter>src\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Controller\MagicControllerFlags.h">
+      <Filter>src\Controller</Filter>
+    </ClInclude>
     <ClInclude Include="src\Controller\ObjectController.h">
       <Filter>src\Controller</Filter>
     </ClInclude>
     <ClInclude Include="src\Controller\ObjectControllerFlags.h">
       <Filter>src\Controller</Filter>
     </ClInclude>
+    <ClInclude Include="src\Controller\PhysicsController.h">
+      <Filter>src\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Controller\PhysicsControllerFlags.h">
+      <Filter>src\Controller</Filter>
+    </ClInclude>
     <ClInclude Include="src\Controller\RenderController.h">
       <Filter>src\Controller</Filter>
     </ClInclude>
     <ClInclude Include="src\Controller\RenderControllerFlags.h">
+      <Filter>src\Controller</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Controller\UserController.h">
       <Filter>src\Controller</Filter>
     </ClInclude>
     <ClInclude Include="src\Engine.h">
@@ -62,6 +113,39 @@
     </ClInclude>
     <ClInclude Include="src\EngineData\EngineStartFlags.h">
       <Filter>src\EngineData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineData\EventData\ConversionTable.h">
+      <Filter>src\EngineData\EventData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineData\EventData\EventData.h">
+      <Filter>src\EngineData\EventData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineData\EventData\GLFWData.h">
+      <Filter>src\EngineData\EventData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineData\EventData\Interface_OnClick.h">
+      <Filter>src\EngineData\EventData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineData\EventData\KeyCodes.h">
+      <Filter>src\EngineData\EventData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineData\EventData\KeyInputData.h">
+      <Filter>src\EngineData\EventData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineData\EventData\KeyState.h">
+      <Filter>src\EngineData\EventData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineData\MagicData\BlockTypes.h">
+      <Filter>src\EngineData\MagicData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineData\MagicData\SpellBlock.h">
+      <Filter>src\EngineData\MagicData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineData\MagicData\SpellBlockAdderData.h">
+      <Filter>src\EngineData\MagicData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineData\MagicData\VisualBlocksData.h">
+      <Filter>src\EngineData\MagicData</Filter>
     </ClInclude>
     <ClInclude Include="src\EngineData\ObjectData\GameObject.h">
       <Filter>src\EngineData\ObjectData</Filter>
@@ -96,7 +180,19 @@
     <ClInclude Include="src\EngineData\RenderData\VulkanData\UniformConstantsData.h">
       <Filter>src\EngineData\RenderData\VulkanData</Filter>
     </ClInclude>
+    <ClInclude Include="src\EngineData\RenderData\WindowStateData.h">
+      <Filter>src\EngineData\RenderData</Filter>
+    </ClInclude>
     <ClInclude Include="src\EngineServices\GameObjectServices.h">
+      <Filter>src\EngineServices</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineServices\ImGui\ImGuiService.h">
+      <Filter>src\EngineServices\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineServices\MagicInteraction\ImGuiDocks\SpellBlockAdder.h">
+      <Filter>src\EngineServices\MagicInteraction\ImGuiDocks</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineServices\MagicSpellService.h">
       <Filter>src\EngineServices</Filter>
     </ClInclude>
     <ClInclude Include="src\EngineServices\VulkanDestructorService.h">
@@ -107,6 +203,36 @@
     </ClInclude>
     <ClInclude Include="src\EngineServices\WindowServices.h">
       <Filter>src\EngineServices</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineServices\WorldInteraction\BlockServices.h">
+      <Filter>src\EngineServices\WorldInteraction</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineServices\WorldInteraction\EventResponseServices.h">
+      <Filter>src\EngineServices\WorldInteraction</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ImGuiDockData\DockData.h">
+      <Filter>src\ImGuiDockData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ImGuiDockData\ObjectPlacementDock.h">
+      <Filter>src\ImGuiDockData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SpellBlocksDefinitions\Action_CreateElement.h">
+      <Filter>src\SpellBlocksDefinitions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SpellBlocksDefinitions\BlockDataParent.h">
+      <Filter>src\SpellBlocksDefinitions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SpellBlocksDefinitions\Event_OnClick.h">
+      <Filter>src\SpellBlocksDefinitions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SpellBlocksDefinitions\SpellBlockNames.h">
+      <Filter>src\SpellBlocksDefinitions</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Text\FontManager.h">
+      <Filter>src\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="vender\freetype\ft2build.h">
+      <Filter>vender\freetype</Filter>
     </ClInclude>
     <ClInclude Include="vender\imgui\backends\imgui_impl_glfw.h">
       <Filter>vender\imgui\backends</Filter>
@@ -138,47 +264,46 @@
     <ClInclude Include="vender\vulkan\vulkan.h">
       <Filter>vender\vulkan</Filter>
     </ClInclude>
-    <ClInclude Include="src\Controller\EventController.h" />
-    <ClInclude Include="src\Controller\EventControllerFlags.h" />
-    <ClInclude Include="src\EngineData\EventData\ConversionTable.h" />
-    <ClInclude Include="src\EngineData\EventData\EventData.h" />
-    <ClInclude Include="src\EngineData\EventData\GLFWData.h" />
-    <ClInclude Include="src\EngineData\EventData\KeyCodes.h" />
-    <ClInclude Include="src\EngineData\EventData\KeyInputData.h" />
-    <ClInclude Include="src\EngineData\EventData\KeyState.h" />
-    <ClInclude Include="src\ImGuiDockData\DockData.h" />
-    <ClInclude Include="src\Controller\MagicController.h" />
-    <ClInclude Include="src\Controller\MagicControllerFlags.h" />
-    <ClInclude Include="src\Controller\PhysicsController.h" />
-    <ClInclude Include="src\Controller\PhysicsControllerFlags.h" />
-    <ClInclude Include="src\EngineData\RenderData\WindowStateData.h" />
-    <ClInclude Include="src\EngineServices\WorldInteraction\BlockServices.h" />
-    <ClInclude Include="src\EngineServices\WorldInteraction\EventResponseServices.h" />
-    <ClInclude Include="src\ImGuiDockData\ObjectPlacementDock.h" />
-    <ClInclude Include="src\EngineServices\MagicSpellService.h" />
-    <ClInclude Include="src\EngineData\MagicData\SpellBlock.h" />
-    <ClInclude Include="src\EngineServices\ImGui\ImGuiService.h" />
-    <ClInclude Include="src\Controller\UserController.h" />
-    <ClInclude Include="src\EngineServices\MagicInteraction\ImGuiDocks\SpellBlockAdder.h" />
-    <ClInclude Include="src\SpellBlocksDefinitions\Event_OnClick.h" />
-    <ClInclude Include="src\SpellBlocksDefinitions\BlockDataParent.h" />
-    <ClInclude Include="src\EngineData\EventData\Interface_OnClick.h" />
-    <ClInclude Include="src\SpellBlocksDefinitions\Action_CreateElement.h" />
-    <ClInclude Include="src\EngineData\MagicData\SpellBlockAdderData.h" />
-    <ClInclude Include="src\SpellBlocksDefinitions\SpellBlockNames.h" />
-    <ClInclude Include="src\EngineData\MagicData\VisualBlocksData.h" />
+    <ClInclude Include="src\EngineData\RenderData\VulkanData\Texture.h" />
+    <ClInclude Include="src\EngineServices\TextureService\TextureInit.h" />
+    <ClInclude Include="src\EngineData\RenderData\VulkanData\GlyphTexture.h" />
+    <ClInclude Include="src\Text\FontPushConstants.h" />
+    <ClInclude Include="src\EngineData\RenderData\FontData.h" />
+    <ClInclude Include="src\EngineData\ObjectData\GameObjects\GameObject.h" />
+    <ClInclude Include="src\EngineData\ObjectData\GameObjects\UIElement.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Controller\EventController.cpp">
+      <Filter>src\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Controller\MagicController.cpp">
+      <Filter>src\Controller</Filter>
+    </ClCompile>
     <ClCompile Include="src\Controller\ObjectController.cpp">
       <Filter>src\Controller</Filter>
     </ClCompile>
+    <ClCompile Include="src\Controller\PhysicsController.cpp">
+      <Filter>src\Controller</Filter>
+    </ClCompile>
     <ClCompile Include="src\Controller\RenderController.cpp">
+      <Filter>src\Controller</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Controller\UserController.cpp">
       <Filter>src\Controller</Filter>
     </ClCompile>
     <ClCompile Include="src\Engine.cpp">
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="src\EngineServices\GameObjectServices.cpp">
+      <Filter>src\EngineServices</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EngineServices\ImGui\ImGuiService.cpp">
+      <Filter>src\EngineServices\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EngineServices\MagicInteraction\ImGuiDocks\SpellBlockAdder.cpp">
+      <Filter>src\EngineServices\MagicInteraction\ImGuiDocks</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EngineServices\MagicSpellService.cpp">
       <Filter>src\EngineServices</Filter>
     </ClCompile>
     <ClCompile Include="src\EngineServices\VulkanDestructorService.cpp">
@@ -190,8 +315,17 @@
     <ClCompile Include="src\EngineServices\WindowServices.cpp">
       <Filter>src\EngineServices</Filter>
     </ClCompile>
+    <ClCompile Include="src\EngineServices\WorldInteraction\BlockServices.cpp">
+      <Filter>src\EngineServices\WorldInteraction</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EngineServices\WorldInteraction\EventResponseServices.cpp">
+      <Filter>src\EngineServices\WorldInteraction</Filter>
+    </ClCompile>
     <ClCompile Include="src\Main.cpp">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Text\FontManager.cpp">
+      <Filter>src\Text</Filter>
     </ClCompile>
     <ClCompile Include="vender\imgui\backends\imgui_impl_glfw.cpp">
       <Filter>vender\imgui\backends</Filter>
@@ -214,15 +348,6 @@
     <ClCompile Include="vender\imgui\imgui_widgets.cpp">
       <Filter>vender\imgui</Filter>
     </ClCompile>
-    <ClCompile Include="src\Controller\EventController.cpp" />
-    <ClCompile Include="src\Controller\MagicController.cpp" />
-    <ClCompile Include="src\Controller\PhysicsController.cpp" />
-    <ClCompile Include="src\EngineServices\WorldInteraction\BlockServices.cpp" />
-    <ClCompile Include="src\EngineServices\WorldInteraction\EventResponseServices.cpp" />
-    <ClCompile Include="src\EngineServices\MagicSpellService.cpp" />
-    <ClCompile Include="src\EngineData\MagicData\BlockTypes.h" />
-    <ClCompile Include="src\EngineServices\ImGui\ImGuiService.cpp" />
-    <ClCompile Include="src\Controller\UserController.cpp" />
-    <ClCompile Include="src\EngineServices\MagicInteraction\ImGuiDocks\SpellBlockAdder.cpp" />
+    <ClCompile Include="src\EngineServices\TextureService\TextureInit.cpp" />
   </ItemGroup>
 </Project>

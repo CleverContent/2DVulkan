@@ -5,7 +5,8 @@ WorldObjectsData Service::GameObjectServices::CreateGameObjects()
 	return WorldObjectsData();
 }
 
-void Service::GameObjectServices::CreateGameObject(glm::vec2 position, float rotation, glm::vec2 scale, glm::vec3 color)
+
+void Service::GameObjectServices::CreateGameObject(glm::vec2 position, float rotation, glm::vec2 scale, glm::vec3 color, int character)
 {
 	PublicVulkanData& publicVulkanData = *PublicVulkanData::getInstance();
 	CoreVulkanData& coreVulkanData = *CoreVulkanData::getInstance();
@@ -22,20 +23,24 @@ void Service::GameObjectServices::CreateGameObject(glm::vec2 position, float rot
 	gameObject.rotation = rotation;
 	gameObject.scale = scale;
 	gameObject.color = color;
-	
-	Vertex v1 = { {0, 1}, color };
-	Vertex v2 = { {1, 1}, color };
-	Vertex v3 = { {0, 0}, color };
-	Vertex v4 = { {1, 0}, color };
 
+	gameObject.vulkanData.texture = publicVulkanData.fontData.texture;
+	gameObject.vulkanData.glyphTexture = publicVulkanData.fontData.glyphTexture;
 
-	std::vector<Vertex> vertices = {v1, v2, v3, v4};
+	gameObject.vulkanData.pushConstants.glpyhId = character;
+
+	Vertex v1 = { {0, 1}, color, {1.0f, 1.0f} };
+	Vertex v2 = { {1, 1}, color, {0.0f, 1.0f} };
+	Vertex v3 = { {0, 0}, color, {1.0f, 0.0f} };
+	Vertex v4 = { {1, 0}, color, {0.0f, 0.0f} };
+
+	std::vector<Vertex> vertices = { v1, v2, v3, v4 };
 	std::vector<uint32_t> indices = { 0, 2, 1, 1, 2, 3 };
 
 	Service::VulkanInitializerService::CreateObjectBuffers(gameObject.vulkanData, vertices, indices);
-	
+
 	Service::VulkanInitializerService::PopulateVulkanData(gameObject.vulkanData);
-	
+
 	gameObjects.push_back(gameObject);
 }
 

@@ -13,6 +13,7 @@
 #include "EngineData/ObjectData/GameObject.h"
 
 #include "EngineServices/VulkanInitializerService.h"
+#include "Text/FontPushConstants.h"
 
 namespace Service
 {

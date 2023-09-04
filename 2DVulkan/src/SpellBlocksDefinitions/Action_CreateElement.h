@@ -7,7 +7,7 @@
 #include "EngineData/EventData/Interface_OnClick.h"
 
 
-struct Event_OnClick : SpellBlock
+struct Event_CreateElement : SpellBlock
 {
 	glm::vec2* scale = nullptr;
 	glm::vec3* color = nullptr;

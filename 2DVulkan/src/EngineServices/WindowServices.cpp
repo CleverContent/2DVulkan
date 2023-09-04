@@ -243,6 +243,8 @@ namespace Service
 
 			vkCmdBindDescriptorSets(commandBuffer, VK_PIPELINE_BIND_POINT_GRAPHICS, gameObject.vulkanData.vulkanPipelineLayout, 0, 1, &gameObject.vulkanData.vulkanDescriptorSets[currentFrame], 0, nullptr);
 
+			vkCmdPushConstants(commandBuffer, gameObject.vulkanData.vulkanPipelineLayout, VK_SHADER_STAGE_VERTEX_BIT, 0, sizeof(FontPushConstants), &gameObject.vulkanData.pushConstants);
+
 			vkCmdDrawIndexed(commandBuffer, gameObject.vulkanData.indexCount, 1, 0, 0, 0);
 		}
 

@@ -39,7 +39,7 @@ void Service::EventResponseServices::PlaceBlockInWorld()
 			gameObject.position = eventData.mousePosition;
 			gameObject.rotation = publicVulkanData->ImGuiDockData.objectPlacementDock.Rotation;
 			gameObject.color = { publicVulkanData->ImGuiDockData.objectPlacementDock.Color[0], publicVulkanData->ImGuiDockData.objectPlacementDock.Color[1], publicVulkanData->ImGuiDockData.objectPlacementDock.Color[2] };
-			gameObject.scale = { 0.1f, 0.1f };
+			gameObject.vulkanData.pushConstants.glpyhId = publicVulkanData->fontData.charsToGlyphIndex.at(publicVulkanData->ImGuiDockData.objectPlacementDock.selectedChar);
 
 			int id = BlockServices::CreateBlock(gameObject);
 			publicVulkanData->ImGuiDockData.objectPlacementDock.ActivelyInteractingObjectID = id;

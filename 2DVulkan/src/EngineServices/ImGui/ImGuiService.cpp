@@ -26,6 +26,7 @@ namespace Service
 		ImGui::Begin("Create Object");
 
 		ImGui::DragFloat("New Object Rotation: ", &publicVulkanData->ImGuiDockData.objectPlacementDock.Rotation, 1.0f, 0.0f, 360.0f);
+		ImGui::InputInt("Character: ", &publicVulkanData->ImGuiDockData.objectPlacementDock.selectedChar);
 		ImGui::ColorPicker3("Object Color: ", publicVulkanData->ImGuiDockData.objectPlacementDock.Color);
 
 		ImGui::End();

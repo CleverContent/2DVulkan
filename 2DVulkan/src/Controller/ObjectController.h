@@ -22,6 +22,9 @@
 
 #include "EngineServices/WorldInteraction/EventResponseServices.h"
 
+#include "EngineServices/TextureService/TextureInit.h"
+
+#include "EngineData/RenderData/FontData.h"
 
 class ObjectController
 {
@@ -49,6 +52,4 @@ private:
 	PublicVulkanData* publicVulkanData = nullptr;
 
 	std::map<Windows, WorldObjectsData> worldObjectsData{};
-
-
 };

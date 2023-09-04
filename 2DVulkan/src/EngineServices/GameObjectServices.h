@@ -7,6 +7,7 @@
 
 #include "EngineServices/VulkanInitializerService.h"
 #include "EngineServices/VulkanDestructorService.h"
+#include "EngineServices/TextureService/TextureInit.h"
 
 #include "EngineData/EventData/KeyInputData.h"
 
@@ -17,7 +18,7 @@ namespace Service
 	{
 	public:
 		static WorldObjectsData CreateGameObjects();
-		static void CreateGameObject(glm::vec2 position, float rotation, glm::vec2 scale, glm::vec3 color);
+		static void CreateGameObject(glm::vec2 position, float rotation, glm::vec2 scale, glm::vec3 color, int character);
 	
 		static int GetClickedOnGameObject();
 	};

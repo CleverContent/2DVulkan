@@ -8,7 +8,7 @@
 #include "ImGuiDockData/DockData.h"
 #include "CoreVulkanData.h"
 #include "EngineData/EventData/KeyInputData.h"
-
+#include "EngineData/RenderData/FontData.h"
 
 struct PublicVulkanData
 {
@@ -30,6 +30,8 @@ struct PublicVulkanData
 	Windows currentActiveWindow = WORLD;
 
 	DockData ImGuiDockData{};
+
+	FontData fontData{};
 
 	KeyInputData* eventData;
 

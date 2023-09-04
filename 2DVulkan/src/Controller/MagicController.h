@@ -5,7 +5,6 @@
 
 #include "MagicControllerFlags.h"
 #include "EngineData/EventData/KeyInputData.h"
-#include "EngineData/MagicData/MagicData.h"
 #include "SpellBlocksDefinitions/SpellBlockNames.h"
 #include "EngineData/MagicData/SpellBlockAdderData.h"
 
@@ -29,7 +28,6 @@ public:
 
 private:
 
-	MagicData magicData{};
 	SpellBlockAdderData spellCreatorData{};
 	Event_OnClick event_OnClick{};
 };

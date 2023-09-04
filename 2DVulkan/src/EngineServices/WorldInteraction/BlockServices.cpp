@@ -15,7 +15,7 @@ int Service::BlockServices::CreateBlock(GameObject gameObject)
 		}
 	}
 
-	GameObjectServices::CreateGameObject(gameObject.position, gameObject.rotation, gameObject.scale, gameObject.color);
+	GameObjectServices::CreateGameObject(gameObject.position, gameObject.rotation, gameObject.scale, gameObject.color, gameObject.vulkanData.pushConstants.glpyhId);
 	return objectId;
 }
 

@@ -8,6 +8,7 @@
 #include "EngineData/Rectangle.h"
 #include "EngineData/RenderData/VulkanData/UniformConstantsData.h"
 #include "ImGuiData.h"
+#include "Texture.h"
 
 struct VulkanImageData
 {

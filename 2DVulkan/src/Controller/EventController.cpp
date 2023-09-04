@@ -3,13 +3,18 @@
 static void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods)
 {
 	EventController* eventController = static_cast<EventController*>(glfwGetWindowUserPointer(window));
+	try {
+		InputCodes::Keyboard cleverKey = (InputCodes::Keyboard)keyboardGLFWtoCleverKeyCodes.at(key);
 
-	InputCodes::Keyboard cleverKey = (InputCodes::Keyboard)keyboardGLFWtoCleverKeyCodes.at(key);
-
-	if (action == GLFW_PRESS)
-		eventController->setKey(cleverKey, CLICKED);
-	else if(action == GLFW_RELEASE)
-		eventController->setKey(cleverKey, RELEASED);
+		if (action == GLFW_PRESS)
+			eventController->setKey(cleverKey, CLICKED);
+		else if (action == GLFW_RELEASE)
+			eventController->setKey(cleverKey, RELEASED);
+	}
+	catch (...)
+	{
+		std::cout << "YOU PRESSED A NO NO BUTTON, A key I didnt recognize, put I no crash :)" << std::endl;
+	}
 }
 
 static void mouseButton_callback(GLFWwindow* window, int key, int action, int mods)
