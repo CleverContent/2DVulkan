@@ -31,8 +31,6 @@ struct PublicVulkanData
 
 	DockData ImGuiDockData{};
 
-	FontData fontData{};
-
 	KeyInputData* eventData;
 
 	WorldObjectsData& getWorldObjectData()

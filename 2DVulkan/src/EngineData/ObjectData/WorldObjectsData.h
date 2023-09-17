@@ -5,13 +5,6 @@
 #include "GameObject.h"
 #include "EngineData/RenderData/WindowStateData.h"
 
-enum ObjectState
-{
-	STATIC,
-	NO_GRAVITY,
-	RIGID_BODY
-};
-
 struct WorldObjectsData
 {
 	std::vector<GameObject> gameObjects{};

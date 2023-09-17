@@ -11,6 +11,7 @@
 
 #include "ObjectControllerFlags.h"
 #include "EngineData/ObjectData/WorldObjectsData.h"
+#include "EngineData/ObjectData/ObjectTemplate.h"
 
 #include "EngineServices/GameObjectServices.h"
 #include "EngineData/RenderData/VulkanData/CoreVulkanData.h"
@@ -21,10 +22,14 @@
 #include "EngineData/RenderData/WindowStateData.h"
 
 #include "EngineServices/WorldInteraction/EventResponseServices.h"
+#include  "EngineServices/ObjectServices/GameObjectService.h"
 
 #include "EngineServices/TextureService/TextureInit.h"
 
 #include "EngineData/RenderData/FontData.h"
+#include "EngineData/RenderData/VulkanData/ObjectTemplate/PipelineData/PipelineLayout.h
+#include "EngineData/RenderData/VulkanData/ObjectTemplate/PushConstants.h"
+#include "EngineData/RenderData/VulkanData/ObjectTemplate/VertexData/Vertex.h"
 
 class ObjectController
 {

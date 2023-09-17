@@ -49,7 +49,7 @@ namespace Service
 		if (coreVulkanData == nullptr)
 			coreVulkanData = CoreVulkanData::getInstance();
 		if (publicVulkanData == nullptr)
-			publicVulkanData = PublicVulkanData::getInstance();
+			publicVulkanData = PublicVulkanData::getInstance(); 
 
 		CreateUniformBuffers(vulkanData);
 		CreateDescriptorSetLayout(vulkanData);

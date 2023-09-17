@@ -153,9 +153,6 @@
     <ClInclude Include="src\EngineData\ObjectData\ModelMatrix.h">
       <Filter>src\EngineData\ObjectData</Filter>
     </ClInclude>
-    <ClInclude Include="src\EngineData\ObjectData\Vertex.h">
-      <Filter>src\EngineData\ObjectData</Filter>
-    </ClInclude>
     <ClInclude Include="src\EngineData\ObjectData\VulkanData.h">
       <Filter>src\EngineData\ObjectData</Filter>
     </ClInclude>
@@ -270,7 +267,24 @@
     <ClInclude Include="src\Text\FontPushConstants.h" />
     <ClInclude Include="src\EngineData\RenderData\FontData.h" />
     <ClInclude Include="src\EngineData\ObjectData\GameObjects\GameObject.h" />
-    <ClInclude Include="src\EngineData\ObjectData\GameObjects\UIElement.h" />
+    <ClInclude Include="src\EngineData\ObjectData\GameObjects\GameObjectRenderData.h" />
+    <ClInclude Include="src\EngineData\ObjectData\GameObjects\GameObjectPhysicsData.h" />
+    <ClInclude Include="src\EngineData\ObjectData\GameObjects\GameObjectShaderData.h" />
+    <ClInclude Include="src\EngineServices\ObjectServices\GameObjectService.h" />
+    <ClInclude Include="src\EngineServices\ObjectServices\RenderDataService.h" />
+    <ClInclude Include="src\EngineData\RenderData\VulkanData\DescriptorSetComponents\DescriptorTypes.h" />
+    <ClInclude Include="src\EngineServices\ObjectServices\ObjectManager.h" />
+    <ClInclude Include="src\EngineData\RenderData\VulkanData\ObjectTemplate\DescriptorData\DescriptorPool.h" />
+    <ClInclude Include="src\EngineData\RenderData\VulkanData\ObjectTemplate\DescriptorData\DescritorList.h" />
+    <ClInclude Include="src\EngineData\RenderData\VulkanData\ObjectTemplate\DescriptorData\BindingLayout.h" />
+    <ClInclude Include="src\EngineData\RenderData\VulkanData\ObjectTemplate\PipelineData\Pipeline.h" />
+    <ClInclude Include="src\EngineData\ObjectData\ObjectTemplate.h" />
+    <ClInclude Include="src\EngineData\RenderData\VulkanData\ObjectTemplate\DescriptorData\Binding.h" />
+    <ClInclude Include="src\EngineData\RenderData\VulkanData\ObjectTemplate\PipelineData\PipelineLayout.h" />
+    <ClInclude Include="src\EngineData\RenderData\VulkanData\ObjectTemplate\ShaderStageDescriptorType.h" />
+    <ClInclude Include="src\EngineData\RenderData\VulkanData\ObjectTemplate\PushConstants.h" />
+    <ClInclude Include="src\EngineData\RenderData\VulkanData\ObjectTemplate\VertexData\Vertex.h" />
+    <ClInclude Include="src\EngineData\RenderData\VulkanData\ObjectTemplate\VertexDataInfo.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Controller\EventController.cpp">
@@ -349,5 +363,8 @@
       <Filter>vender\imgui</Filter>
     </ClCompile>
     <ClCompile Include="src\EngineServices\TextureService\TextureInit.cpp" />
+    <ClCompile Include="src\EngineServices\ObjectServices\GameObjectService.cpp" />
+    <ClCompile Include="src\EngineServices\ObjectServices\RenderDataService.cpp" />
+    <ClCompile Include="src\EngineServices\ObjectServices\ObjectManager.cpp" />
   </ItemGroup>
 </Project>

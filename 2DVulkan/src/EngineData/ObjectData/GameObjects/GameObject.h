@@ -1,19 +1,15 @@
 #pragma once
 #include <glm.hpp>
-#include "EngineData/ObjectData/VulkanData.h"
+
+#include "GameObjectRenderData.h"
+#include "GameObjectPhysicsData.h"
+#include "GameObjectShaderData.h"
 
 struct GameObject
 {
-	glm::vec2 position{};
-	glm::vec2 rotation{};
-	glm::vec2 scale{};
+	glm::uint32 objectID = 0;
 
-	GameObject(glm::vec2 p, glm::vec2 r, glm::vec2 s)
-	{
-		position = p;
-		rotation = r;
-		scale = s;
-	}
-
-	virtual VulkanData& getRenderData() = 0;
+	GameObjectRenderData renderData{};
+	GameObjectPhysicsData physicsData{};
+	GameObjectShaderData shaderData{};
 };

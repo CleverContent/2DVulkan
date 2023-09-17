@@ -38,6 +38,7 @@ void RenderController::Render()
     bool renderingWithImGUI = false;
     uint32_t swapchainImageIndex = Service::WindowServices::ImGuiRender();
     Service::WindowServices::VulkanRender(swapchainImageIndex);
+    coreVulkanData->currentFrameAheadCount = ((coreVulkanData->currentFrameAheadCount++) % coreVulkanData->MaxFramesInFlight);
 }
 
 bool RenderController::HasWindowClosed()

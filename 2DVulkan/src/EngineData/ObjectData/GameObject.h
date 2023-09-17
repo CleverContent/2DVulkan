@@ -19,6 +19,4 @@ struct GameObject
 	bool Static = true;
 
 	VulkanData vulkanData{};
-
-
 };

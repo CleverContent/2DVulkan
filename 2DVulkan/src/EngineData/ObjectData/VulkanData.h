@@ -34,9 +34,3 @@ struct VulkanData
 	std::shared_ptr<Texture> texture = nullptr;
 	std::shared_ptr<GlyphTexture> glyphTexture = nullptr;
 };
-
-
-struct ObjectRenderData
-{
-
-};

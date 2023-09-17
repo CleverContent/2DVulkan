@@ -12,7 +12,6 @@ ObjectController::ObjectController(ObjectControllerFlags flags, KeyInputData* ev
 	{
 		worldObjectsData.insert({ (Windows)i, WorldObjectsData{} });
 	}
-
 }
 
 ObjectController::~ObjectController()
@@ -24,11 +23,42 @@ void ObjectController::Init()
 {
 	vulkanData = CoreVulkanData::getInstance();
 	publicVulkanData = PublicVulkanData::getInstance();
-
-	publicVulkanData->fontData.glyphTexture = TextureInit::CreateTextureForBezierLocation();
-	publicVulkanData->fontData.texture = TextureInit::CreateTextureForFont();
-
 	glm::vec2 offset = { 20, 150 };
+
+
+
+
+
+
+	/* This is almost what it should look like to make a object template, An object template is basically a different version of ECS
+	* The only major difference between each object tmeplate is the shader and data being submitting to the shader. You can change absolutly
+	* everything allowing for any type of object or shader.
+	*/
+
+	BindingLayout bindingLayout{};
+	PushConstants pushConstants{};
+	Vertex vertex{};
+
+	bindingLayout.addDescriptorType({VK_SHADER_STAGE_VERTEX_BIT, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, 0, 0});
+	bindingLayout.addDescriptorType({VK_SHADER_STAGE_VERTEX_BIT, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, 1, 0});  
+
+	//Push Constants if any
+	//
+	//But none
+
+	vertex.addVertexAttribute({VEC2, 0, 0});
+	vertex.addVertexAttribute({VEC3, 1, 0});
+
+	int BasicObjectId = Service::GameObjectService::CreateBlankObject(BasicObjectId, "Shader_BasicObject", bindingLayout, NULL, vertex);
+
+	int objectId = Service::GameObjectService::CreateObjectInstance(BasicObjectId);
+
+
+
+
+
+
+
 
 	glm::vec2 scale = { (vulkanData->windowSize.x - offset.x) / 26.0f, (vulkanData->windowSize.y - offset.y) / 26.0f };
 	int counter = 0;
