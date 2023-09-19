@@ -19,11 +19,29 @@
     <Filter Include="src\EngineData\ObjectData">
       <UniqueIdentifier>{8C0E47C6-F8D0-7A50-4181-09DDAD82532E}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\EngineData\ObjectData\GameObjects">
+      <UniqueIdentifier>{7F4B2901-EB0F-28F1-B475-58BB20F9C326}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\EngineData\RenderData">
       <UniqueIdentifier>{F54B6F98-610E-A322-AABE-31AF16C07B00}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\EngineData\RenderData\VulkanData">
       <UniqueIdentifier>{0F8C5311-FB72-1509-A4C3-7B2690898E6F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\EngineData\RenderData\VulkanData\DescriptorSetComponents">
+      <UniqueIdentifier>{8FCF81DB-7B3A-42E7-2456-A74C10A005CA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\EngineData\RenderData\VulkanData\ObjectTemplate">
+      <UniqueIdentifier>{9113A7CB-FD24-4F72-8676-E1B1F286D8AB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\EngineData\RenderData\VulkanData\ObjectTemplate\DescriptorData">
+      <UniqueIdentifier>{39889B71-2574-33E1-8EEA-F2337AF5D311}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\EngineData\RenderData\VulkanData\ObjectTemplate\PipelineData">
+      <UniqueIdentifier>{90BF3728-7CC0-CBA2-A588-382791E8415D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\EngineData\RenderData\VulkanData\ObjectTemplate\VertexData">
+      <UniqueIdentifier>{B881A776-A457-2E74-8D01-49C779766115}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\EngineServices">
       <UniqueIdentifier>{B639949E-A21D-55F4-0B7E-4F47F7803F76}</UniqueIdentifier>
@@ -36,6 +54,12 @@
     </Filter>
     <Filter Include="src\EngineServices\MagicInteraction\ImGuiDocks">
       <UniqueIdentifier>{24260E47-10A4-5EE0-F99B-1C78E5B8A008}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\EngineServices\ObjectServices">
+      <UniqueIdentifier>{20C1FE31-8C2F-54B1-D518-0FB141C6494D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\EngineServices\TextureService">
+      <UniqueIdentifier>{6784543A-D3F2-A9B9-1CDC-64B988899F55}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\EngineServices\WorldInteraction">
       <UniqueIdentifier>{ED497F23-5903-EACD-E262-04A84E1BA03D}</UniqueIdentifier>
@@ -147,10 +171,22 @@
     <ClInclude Include="src\EngineData\MagicData\VisualBlocksData.h">
       <Filter>src\EngineData\MagicData</Filter>
     </ClInclude>
-    <ClInclude Include="src\EngineData\ObjectData\GameObject.h">
-      <Filter>src\EngineData\ObjectData</Filter>
+    <ClInclude Include="src\EngineData\ObjectData\GameObjects\GameObject.h">
+      <Filter>src\EngineData\ObjectData\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineData\ObjectData\GameObjects\GameObjectPhysicsData.h">
+      <Filter>src\EngineData\ObjectData\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineData\ObjectData\GameObjects\GameObjectRenderData.h">
+      <Filter>src\EngineData\ObjectData\GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineData\ObjectData\GameObjects\GameObjectShaderData.h">
+      <Filter>src\EngineData\ObjectData\GameObjects</Filter>
     </ClInclude>
     <ClInclude Include="src\EngineData\ObjectData\ModelMatrix.h">
+      <Filter>src\EngineData\ObjectData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineData\ObjectData\ObjectTemplate.h">
       <Filter>src\EngineData\ObjectData</Filter>
     </ClInclude>
     <ClInclude Include="src\EngineData\ObjectData\VulkanData.h">
@@ -162,16 +198,58 @@
     <ClInclude Include="src\EngineData\Rectangle.h">
       <Filter>src\EngineData</Filter>
     </ClInclude>
+    <ClInclude Include="src\EngineData\RenderData\FontData.h">
+      <Filter>src\EngineData\RenderData</Filter>
+    </ClInclude>
     <ClInclude Include="src\EngineData\RenderData\VulkanData\CoreVulkanData.h">
+      <Filter>src\EngineData\RenderData\VulkanData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineData\RenderData\VulkanData\DescriptorSetComponents\DescriptorTypes.h">
+      <Filter>src\EngineData\RenderData\VulkanData\DescriptorSetComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineData\RenderData\VulkanData\GlyphTexture.h">
       <Filter>src\EngineData\RenderData\VulkanData</Filter>
     </ClInclude>
     <ClInclude Include="src\EngineData\RenderData\VulkanData\ImGuiData.h">
       <Filter>src\EngineData\RenderData\VulkanData</Filter>
     </ClInclude>
+    <ClInclude Include="src\EngineData\RenderData\VulkanData\ObjectTemplate\DescriptorData\Binding.h">
+      <Filter>src\EngineData\RenderData\VulkanData\ObjectTemplate\DescriptorData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineData\RenderData\VulkanData\ObjectTemplate\DescriptorData\BindingLayout.h">
+      <Filter>src\EngineData\RenderData\VulkanData\ObjectTemplate\DescriptorData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineData\RenderData\VulkanData\ObjectTemplate\DescriptorData\DescriptorPool.h">
+      <Filter>src\EngineData\RenderData\VulkanData\ObjectTemplate\DescriptorData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineData\RenderData\VulkanData\ObjectTemplate\DescriptorData\DescritorList.h">
+      <Filter>src\EngineData\RenderData\VulkanData\ObjectTemplate\DescriptorData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineData\RenderData\VulkanData\ObjectTemplate\PipelineData\Pipeline.h">
+      <Filter>src\EngineData\RenderData\VulkanData\ObjectTemplate\PipelineData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineData\RenderData\VulkanData\ObjectTemplate\PipelineData\PipelineLayout.h">
+      <Filter>src\EngineData\RenderData\VulkanData\ObjectTemplate\PipelineData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineData\RenderData\VulkanData\ObjectTemplate\PushConstants.h">
+      <Filter>src\EngineData\RenderData\VulkanData\ObjectTemplate</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineData\RenderData\VulkanData\ObjectTemplate\ShaderStageDescriptorType.h">
+      <Filter>src\EngineData\RenderData\VulkanData\ObjectTemplate</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineData\RenderData\VulkanData\ObjectTemplate\VertexData\Vertex.h">
+      <Filter>src\EngineData\RenderData\VulkanData\ObjectTemplate\VertexData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineData\RenderData\VulkanData\ObjectTemplate\VertexDataInfo.h">
+      <Filter>src\EngineData\RenderData\VulkanData\ObjectTemplate</Filter>
+    </ClInclude>
     <ClInclude Include="src\EngineData\RenderData\VulkanData\PhysicalDeviceProperties.h">
       <Filter>src\EngineData\RenderData\VulkanData</Filter>
     </ClInclude>
     <ClInclude Include="src\EngineData\RenderData\VulkanData\PublicVulkanData.h">
+      <Filter>src\EngineData\RenderData\VulkanData</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineData\RenderData\VulkanData\Texture.h">
       <Filter>src\EngineData\RenderData\VulkanData</Filter>
     </ClInclude>
     <ClInclude Include="src\EngineData\RenderData\VulkanData\UniformConstantsData.h">
@@ -191,6 +269,18 @@
     </ClInclude>
     <ClInclude Include="src\EngineServices\MagicSpellService.h">
       <Filter>src\EngineServices</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineServices\ObjectServices\GameObjectService.h">
+      <Filter>src\EngineServices\ObjectServices</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineServices\ObjectServices\ObjectManager.h">
+      <Filter>src\EngineServices\ObjectServices</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineServices\ObjectServices\RenderDataService.h">
+      <Filter>src\EngineServices\ObjectServices</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EngineServices\TextureService\TextureInit.h">
+      <Filter>src\EngineServices\TextureService</Filter>
     </ClInclude>
     <ClInclude Include="src\EngineServices\VulkanDestructorService.h">
       <Filter>src\EngineServices</Filter>
@@ -228,6 +318,9 @@
     <ClInclude Include="src\Text\FontManager.h">
       <Filter>src\Text</Filter>
     </ClInclude>
+    <ClInclude Include="src\Text\FontPushConstants.h">
+      <Filter>src\Text</Filter>
+    </ClInclude>
     <ClInclude Include="vender\freetype\ft2build.h">
       <Filter>vender\freetype</Filter>
     </ClInclude>
@@ -261,30 +354,6 @@
     <ClInclude Include="vender\vulkan\vulkan.h">
       <Filter>vender\vulkan</Filter>
     </ClInclude>
-    <ClInclude Include="src\EngineData\RenderData\VulkanData\Texture.h" />
-    <ClInclude Include="src\EngineServices\TextureService\TextureInit.h" />
-    <ClInclude Include="src\EngineData\RenderData\VulkanData\GlyphTexture.h" />
-    <ClInclude Include="src\Text\FontPushConstants.h" />
-    <ClInclude Include="src\EngineData\RenderData\FontData.h" />
-    <ClInclude Include="src\EngineData\ObjectData\GameObjects\GameObject.h" />
-    <ClInclude Include="src\EngineData\ObjectData\GameObjects\GameObjectRenderData.h" />
-    <ClInclude Include="src\EngineData\ObjectData\GameObjects\GameObjectPhysicsData.h" />
-    <ClInclude Include="src\EngineData\ObjectData\GameObjects\GameObjectShaderData.h" />
-    <ClInclude Include="src\EngineServices\ObjectServices\GameObjectService.h" />
-    <ClInclude Include="src\EngineServices\ObjectServices\RenderDataService.h" />
-    <ClInclude Include="src\EngineData\RenderData\VulkanData\DescriptorSetComponents\DescriptorTypes.h" />
-    <ClInclude Include="src\EngineServices\ObjectServices\ObjectManager.h" />
-    <ClInclude Include="src\EngineData\RenderData\VulkanData\ObjectTemplate\DescriptorData\DescriptorPool.h" />
-    <ClInclude Include="src\EngineData\RenderData\VulkanData\ObjectTemplate\DescriptorData\DescritorList.h" />
-    <ClInclude Include="src\EngineData\RenderData\VulkanData\ObjectTemplate\DescriptorData\BindingLayout.h" />
-    <ClInclude Include="src\EngineData\RenderData\VulkanData\ObjectTemplate\PipelineData\Pipeline.h" />
-    <ClInclude Include="src\EngineData\ObjectData\ObjectTemplate.h" />
-    <ClInclude Include="src\EngineData\RenderData\VulkanData\ObjectTemplate\DescriptorData\Binding.h" />
-    <ClInclude Include="src\EngineData\RenderData\VulkanData\ObjectTemplate\PipelineData\PipelineLayout.h" />
-    <ClInclude Include="src\EngineData\RenderData\VulkanData\ObjectTemplate\ShaderStageDescriptorType.h" />
-    <ClInclude Include="src\EngineData\RenderData\VulkanData\ObjectTemplate\PushConstants.h" />
-    <ClInclude Include="src\EngineData\RenderData\VulkanData\ObjectTemplate\VertexData\Vertex.h" />
-    <ClInclude Include="src\EngineData\RenderData\VulkanData\ObjectTemplate\VertexDataInfo.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Controller\EventController.cpp">
@@ -319,6 +388,18 @@
     </ClCompile>
     <ClCompile Include="src\EngineServices\MagicSpellService.cpp">
       <Filter>src\EngineServices</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EngineServices\ObjectServices\GameObjectService.cpp">
+      <Filter>src\EngineServices\ObjectServices</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EngineServices\ObjectServices\ObjectManager.cpp">
+      <Filter>src\EngineServices\ObjectServices</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EngineServices\ObjectServices\RenderDataService.cpp">
+      <Filter>src\EngineServices\ObjectServices</Filter>
+    </ClCompile>
+    <ClCompile Include="src\EngineServices\TextureService\TextureInit.cpp">
+      <Filter>src\EngineServices\TextureService</Filter>
     </ClCompile>
     <ClCompile Include="src\EngineServices\VulkanDestructorService.cpp">
       <Filter>src\EngineServices</Filter>
@@ -362,9 +443,5 @@
     <ClCompile Include="vender\imgui\imgui_widgets.cpp">
       <Filter>vender\imgui</Filter>
     </ClCompile>
-    <ClCompile Include="src\EngineServices\TextureService\TextureInit.cpp" />
-    <ClCompile Include="src\EngineServices\ObjectServices\GameObjectService.cpp" />
-    <ClCompile Include="src\EngineServices\ObjectServices\RenderDataService.cpp" />
-    <ClCompile Include="src\EngineServices\ObjectServices\ObjectManager.cpp" />
   </ItemGroup>
 </Project>

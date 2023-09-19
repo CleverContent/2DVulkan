@@ -1,6 +1,6 @@
 For now I am not saving the vendor folder to git, the items that need to be installed into the directory:
 	"/2DVulkan/vender/**" are:
-		AsposeFont
+		--AsposeFont
 		Freetype
 		GLFW
 		glm

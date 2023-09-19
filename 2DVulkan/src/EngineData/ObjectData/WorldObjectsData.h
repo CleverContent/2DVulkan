@@ -2,32 +2,27 @@
 #include <vector>
 #include <map>
 
-#include "GameObject.h"
+#include "EngineData/ObjectData/GameObjects/GameObject.h"
 #include "EngineData/RenderData/WindowStateData.h"
 
 struct WorldObjectsData
 {
-	std::vector<GameObject> gameObjects{};
-
-	GameObject& getGameObject(int id)
+	int getNextFreeObjectID()
 	{
-		for (GameObject& gameObject : gameObjects)
+		return nextFreeObjectId++;
+	}
+
+	bool addGameObject(GameObject newGameObject)
+	{
+		if (gameObjects.count(newGameObject.objectID) != 0)
 		{
-			if (gameObject.ObjectId == id)
-				return gameObject;
+			std::cout << "FAILED: could not add object because current object exists witht the same object ID \n";
+			return false;
 		}
-	}
-
-	int getNextID()
-	{
-		return ++NextObjectID;
-	}
-
-	int getLastUsedID()
-	{
-		return NextObjectID;
+		gameObjects.insert({ newGameObject.objectID, newGameObject});
 	}
 
 private:
-	int NextObjectID = -1;
+	std::map<int, GameObject> gameObjects{};
+	int nextFreeObjectId = 0;
 };
