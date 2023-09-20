@@ -12,7 +12,8 @@ std::map<unsigned long, GlyphData> FontManager::LoadFont()
 
 	std::map<unsigned long, GlyphData> output{};
 
-	std::string filename = std::filesystem::current_path().string() + "/src/Resources/Fonts/CenturyGothic.ttf";
+	std::string filename = std::filesystem::current_path().string() + "/src/Resources/Fonts/Stray-Regular.ttf";
+
 
 	FT_Face face = GetFaceDataOfFont(filename);
 

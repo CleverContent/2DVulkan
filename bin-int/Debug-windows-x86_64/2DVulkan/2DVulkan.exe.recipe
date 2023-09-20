@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>D:\Projects\2DVulkan\2DVulkan\bin\Debug-windows-x86_64\2DVulkan\2DVulkan.exe</FullPath>
+      <FullPath>C:\Projects\Vulkan2D\bin\Debug-windows-x86_64\2DVulkan\2DVulkan.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

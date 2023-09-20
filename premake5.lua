@@ -77,7 +77,7 @@ project "2DVulkan"
 	{
 		"GLFW",
 		"2DVulkan/vender/vulkan/Lib/vulkan-1.lib",
-		"2DVulkan/vender/freetype/release-static-dll/win64/freetype.lib"
+		"2DVulkan/vender/freetype/lib/freetype.lib"
 	}
 	
 	ABSOLUTE_PATH = path.getabsolute(os.getcwd())

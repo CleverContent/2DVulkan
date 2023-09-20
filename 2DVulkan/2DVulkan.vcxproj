@@ -78,7 +78,7 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>RESOURCES="D:/Projects/2DVulkan/2DVulkan/Clever/Clever/Resources/";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>RESOURCES="C:/Projects/Vulkan2D/Clever/Clever/Resources/";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;vender\GLFW\include;vender\vulkan\Include;vender\glm\include;vender\stb_image\include;vender\stb_truetype\include;vender\freetype\include;vender\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
@@ -87,14 +87,14 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>vender\vulkan\Lib\vulkan-1.lib;vender\freetype\release-static-dll\win64\freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>vender\vulkan\Lib\vulkan-1.lib;vender\freetype\lib\freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>RESOURCES="D:/Projects/2DVulkan/2DVulkan/Clever/Clever/Resources/";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>RESOURCES="C:/Projects/Vulkan2D/Clever/Clever/Resources/";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;vender\GLFW\include;vender\vulkan\Include;vender\glm\include;vender\stb_image\include;vender\stb_truetype\include;vender\freetype\include;vender\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
@@ -103,14 +103,14 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>vender\vulkan\Lib\vulkan-1.lib;vender\freetype\release-static-dll\win64\freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>vender\vulkan\Lib\vulkan-1.lib;vender\freetype\lib\freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>RESOURCES="D:/Projects/2DVulkan/2DVulkan/Clever/Clever/Resources/";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>RESOURCES="C:/Projects/Vulkan2D/Clever/Clever/Resources/";%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>src;vender\GLFW\include;vender\vulkan\Include;vender\glm\include;vender\stb_image\include;vender\stb_truetype\include;vender\freetype\include;vender\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
@@ -119,7 +119,7 @@
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>vender\vulkan\Lib\vulkan-1.lib;vender\freetype\release-static-dll\win64\freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>vender\vulkan\Lib\vulkan-1.lib;vender\freetype\lib\freetype.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -156,8 +156,8 @@
     <ClInclude Include="src\EngineData\ObjectData\VulkanData.h" />
     <ClInclude Include="src\EngineData\ObjectData\WorldObjectsData.h" />
     <ClInclude Include="src\EngineData\Rectangle.h" />
-    <ClInclude Include="src\EngineData\RenderData\VulkanData\CoreVulkanData.h" />
     <ClInclude Include="src\EngineData\RenderData\FontData.h" />
+    <ClInclude Include="src\EngineData\RenderData\VulkanData\CoreVulkanData.h" />
     <ClInclude Include="src\EngineData\RenderData\VulkanData\GlyphTexture.h" />
     <ClInclude Include="src\EngineData\RenderData\VulkanData\ImGuiData.h" />
     <ClInclude Include="src\EngineData\RenderData\VulkanData\PhysicalDeviceProperties.h" />
